@@ -16,7 +16,8 @@ connectDB();
 
 const app = express();
 
-app.use(cors({ origin: process.env.CLIENT_URL || "*", credentials: true }));
+// Allow requests from any origin (useful for deployed front‑end URLs). In production you may restrict this to specific domains.
+app.use(cors({ origin: "*", credentials: true }));
 app.use(express.json());
 app.use(morgan("dev"));
 
